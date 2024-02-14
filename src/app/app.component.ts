@@ -8,6 +8,9 @@ import { AccountsService } from './accounts.service';
   providers: [AccountsService]
 })
 export class AppComponent {
+onAccountAdded($event: any) {
+throw new Error('Method not implemented.');
+}
   accounts: { name: string, status: string }[] = [];
 
   constructor(private accountsService: AccountsService) { }
