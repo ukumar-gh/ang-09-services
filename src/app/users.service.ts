@@ -1,3 +1,4 @@
-export class UserService {
-  
+export class userService {
+  activeUsers = ['Max', 'Anna'];
+  inactiveUsers = ['Chris', 'Mabu'];
 }

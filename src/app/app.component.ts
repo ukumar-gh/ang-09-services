@@ -5,18 +5,17 @@ import { AccountsService } from './accounts.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AccountsService]
 })
 export class AppComponent {
-onAccountAdded($event: any) {
-throw new Error('Method not implemented.');
-}
-  accounts: { name: string, status: string }[] = [];
+  activeUsers = ['Max', 'Anna'];
+  inactiveUsers = ['Chris', 'Mabu'];
 
-  constructor(private accountsService: AccountsService) { }
-  
-  ngOnInit() {
-    this.accounts = this.accountsService.accounts;
+  onSetToInactive(id: number) {
+    this.inactiveUsers.push(this.activeUsers[id]);
+    this.activeUsers.splice(id, 1);
   }
-
+  onSetToactive(id: number) {
+    this.activeUsers.push(this.inactiveUsers[id]);
+    this.inactiveUsers.splice(id, 1);
+  }
 }
